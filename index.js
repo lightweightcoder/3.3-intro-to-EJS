@@ -1,5 +1,4 @@
 import express from 'express';
-import { read } from './jsonFileStorage.js';
 
 // "create" the server
 const app = express();
@@ -15,6 +14,9 @@ app.get('/bananas', (request, response) => {
   const data = {
     user: {
       name: 'kai',
+    },
+    header: {
+      header1: 'Banana App',
     },
   };
 
