@@ -10,7 +10,7 @@ const PORT = 3004;
 app.set('view engine', 'ejs');
 
 // set the route
-app.get('/bananas', (request, response) => {
+app.get('/fruits/:name', (request, response) => {
   const data = {
     user: {
       name: 'kai',
@@ -19,6 +19,12 @@ app.get('/bananas', (request, response) => {
       header1: 'Banana App',
     },
   };
+
+  // get the request parameter value
+  const { name } = request.params;
+
+  // add new fruit name as a key-value pair to data object
+  data.fruit = name;
 
   // response.render take 2 arguments:
   // 1. The path/name of a file (without extension) in the views directory.
